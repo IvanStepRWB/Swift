@@ -1,0 +1,69 @@
+import UIKit
+
+// Массивы
+var arrayNames = ["Vasia","Vadin","Ivan","Ernest","Vova"]
+arrayNames.append("Bob")
+arrayNames.append("Jojo")
+arrayNames.remove(at: 6)
+print(arrayNames[2])
+arrayNames.contains("Bob")
+
+// Множества
+var numbers: Set<Int> = [1,2,3,4,5]
+numbers.insert(10)
+numbers.remove(2)
+numbers.contains(7)
+
+// Словари
+var colors: [String: String] = [
+    "Vasia":"blue",
+    "Ivan":"red",
+    "Ernest":"green",
+    "Bob":"black"
+]
+print(colors["Bob"] ?? "Цвет не найден")
+colors["Vasia"] = "green"
+colors["Ernest"] = nil
+colors.keys.contains("Sam")
+
+var numbs: [String:Int] = ["one":1,"two":2]
+for (key, value) in numbs {
+    print("\(key): \(value)")
+}
+
+
+var fruits: Set<String> = ["apple","orange","banana","pineapple","passion fruit"]
+fruits.insert("Coconut")
+print("\(fruits.count)")
+
+
+var students: [Int: String] = [
+    100: "Ivan",
+    111: "Maria",
+    132: "Alex",
+    144: "Olga"
+]
+
+if let studentName = students[144] {
+    print("Студент с ID 144: \(studentName)")
+} else {
+    print("Студент с таким ID не найден")
+}
+
+
+var array = [2,3,6,1,6,7]
+array.sort()
+
+var europeanCountries: Set<String> = [
+    "France", "Germany", "Italy", "Spain", "Poland"]
+europeanCountries.contains("France")
+
+var citiesPopulation: [String: Int] = [
+    "Moscow": 12500000,
+    "Paris": 2148000,
+    "Berlin": 3769000,
+    "Rome": 2873000
+]
+
+
+citiesPopulation["Paris"] = 100500
