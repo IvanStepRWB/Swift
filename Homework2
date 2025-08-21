@@ -1,42 +1,65 @@
 import UIKit
 
-// Массивы
+// Создайте массив с именами 5 ваших друзей.
 var arrayNames = ["Vasia","Vadin","Ivan","Ernest","Vova"]
+
+//  Добавьте еще два имени в этот массив.
 arrayNames.append("Bob")
 arrayNames.append("Jojo")
+
+//Удалите последнее имя из массива.
 arrayNames.remove(at: 6)
+
+//Выведите имя третьего друга в списке.
 print(arrayNames[2])
+
+//Проверьте, есть ли в массиве имя "Bob".
 arrayNames.contains("Bob")
 
-// Множества
+// Создайте множество из пяти различных чисел.
 var numbers: Set<Int> = [1,2,3,4,5]
+
+//Добавьте еще одно число в это множество.
 numbers.insert(10)
+
+//Удалите одно число из множества.
 numbers.remove(2)
+
+//Проверьте, есть ли число 7 в вашем множестве.
 numbers.contains(7)
 
-// Словари
+// Создайте словарь, где ключи - это имена ваших друзей, а значения - их любимый цвет.
 var colors: [String: String] = [
     "Vasia":"blue",
     "Ivan":"red",
     "Ernest":"green",
     "Bob":"black"
 ]
+
+// Выведите любимый цвет вашего друга Bob.
 print(colors["Bob"] ?? "Цвет не найден")
+
+//Измените любимый цвет вашего друга Vasia на зеленый.
 colors["Vasia"] = "green"
+
+// Удалите данные вашего друга Ernest из словаря.
 colors["Ernest"] = nil
+
+//Проверьте, есть ли в словаре данные вашего друга Sam.
 colors.keys.contains("Sam")
 
+// Создайте словарь с ключами-строками и значениями-integers. Используйте цикл for-in для итерации по словарю и печати каждого значения.
 var numbs: [String:Int] = ["one":1,"two":2]
 for (key, value) in numbs {
     print("\(key): \(value)")
 }
 
-
+//Создайте множество из пяти фруктов, затем добавьте еще один и выведите количество фруктов в множестве.
 var fruits: Set<String> = ["apple","orange","banana","pineapple","passion fruit"]
 fruits.insert("Coconut")
 print("\(fruits.count)")
 
-
+//Создайте словарь, где ключи это идентификационные номера студентов, а значения - это их имена. Далее выведите имя студента с определенным идентификационным номером.
 var students: [Int: String] = [
     100: "Ivan",
     111: "Maria",
@@ -50,14 +73,17 @@ if let studentName = students[144] {
     print("Студент с таким ID не найден")
 }
 
-
+// Создайте массив с пятью различными числами. Затем отсортируйте массив в порядке возрастания.
 var array = [2,3,6,1,6,7]
 array.sort()
 
+//Создайте множество с именами всех европейских стран, затем проверьте является ли Франция частью этого множества.
 var europeanCountries: Set<String> = [
     "France", "Germany", "Italy", "Spain", "Poland"]
 europeanCountries.contains("France")
 
+
+//Создайте словарь, где ключи - это названия городов, а значения - это количество населения этих городов. Измените население одного из городов.
 var citiesPopulation: [String: Int] = [
     "Moscow": 12500000,
     "Paris": 2148000,
