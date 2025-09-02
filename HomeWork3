@@ -1,0 +1,215 @@
+import UIKit
+
+// 1. Напишите код, который проверяет, является ли число положительным, отрицательным или нулем.
+
+var number = 1
+
+if number  == 0 {
+    print("это 0")
+} else if number  > 0 {
+    print("это положительное")
+} else {
+    print("это отрицательное")
+}
+
+// [1, 2, 3, 4, 5] - инкриментируйте каждый элемент в этом массиве.
+
+var numbersArray = [1, 2, 3, 4, 5]
+
+for i in 0..<numbersArray.count {
+    numbersArray[i] += 1
+}
+print(numbersArray)
+
+// Используя цикл for-in, выведите все числа от 10 до 1 в обратном порядке.
+
+for number in (1...10).reversed() {
+    print(number)
+}
+
+//Используйте условие if для проверки, является ли переменная четным числом.
+
+var Int = 5
+if Int % 2 == 0 {
+    print("Число четное")
+} else {
+    print("Число нечетное")
+}
+
+//Используйте switch чтобы классифицировать оценку буквой (A, B, C…)
+
+var score = 82
+
+switch score {
+case 90...100:
+    print("Оценка: A")
+case 80..<90:
+    print("Оценка: B")
+case 70..<80:
+    print("Оценка: C")
+case 60..<70:
+    print("Оценка: D")
+case 0..<60:
+    print("Оценка: F")
+default:
+    print("Некорректная оценка")
+}
+
+// Напишите цикл while, который добавляет элементы в массив до тех пор, пока его размер не достигнет 10.
+
+var array: [Int] = []
+var index = 0
+while index < 10  {
+    array.append(index)
+    index += 1
+}
+
+
+//Напишите цикл, который удваивает значение каждого элемента в массиве integer.
+
+var nummbersArray = [1, 2, 3, 4, 5]
+
+for i in 0..<nummbersArray.count {
+    nummbersArray[i] = nummbersArray[i] * 2
+}
+print(nummbersArray)
+
+// Используйте оператор if-else, чтобы проверить, равны или нет две строки.
+
+var string1 = "hello"
+var string2 = "privet"
+
+if string1 == string2 {
+    print("строки одинаковы")
+}
+else {
+    print("строки разные")
+}
+// Создайте словарь с ключами-строками и значениями-integers. Используйте цикл for-in для итерации по словарю и печати каждого значения.
+
+var money: [String: Int] = [
+    "Dollar": 1000,
+    "Rubl": 400000,
+    "Tugrick": 333,
+    "Euro": 1242
+]
+for (subject, score) in money {
+    print("\(subject): \(score)")
+}
+
+
+// Напишите цикл for, который выведет только четные числа в диапазоне от 1 до 100.
+
+for number in 1...100 {
+    if number % 2 == 0 {
+        print(number)
+    }
+}
+
+// Создайте строку с именем firstName. Используйте if-else, чтобы проверить, если firstName равно вашему имени, напечатайте 'Hello, me!', в противном случае напечатайте 'Hello, (имя)!'
+
+var name = "Ivann"
+var myName = "Ivan"
+
+if name == myName {
+    print("Hello, me")
+}
+else {
+    print("Hello, \(name)")
+}
+
+// 1. Выводите все элементы массива, которые больше среднего значения.
+
+var arrayNumbers = [11, 53, 74, 10, 31, 854]
+
+var average = arrayNumbers.reduce(0, +) / arrayNumbers.count   // считаем среднее
+
+print("Среднее значение: \(average)")
+
+for number in arrayNumbers {
+    if number > average {
+        print(number)
+    }
+}
+
+// 1. Напишите код, который осуществляет вывод чисел от 1 до 100. Но для кратных трём пусть вместо числа выводится слово "Fizz", а для кратных пяти — слово "Buzz". Если число кратно и 3, и 5, то выведите "FizzBuzz".
+
+
+for number in 1...100 {
+    if number % 3 == 0 && number % 5 == 0 {
+        print("FizzBuzz")
+    } else if number % 3 == 0 {
+        print("Fizz")
+    } else if number % 5 == 0 {
+        print("Buzz")
+    } else {
+        print(number)
+    }
+}
+
+// Используйте цикл for-in, чтобы перебрать массив слов и напечатать длину каждого слова.
+
+let words = ["car", "banana", "batman", "iphone"]
+
+for word in words {
+    print("\(word): \(word.count) символов")
+}
+
+// Используйте цикл, чтобы перебрать массив чисел и создайте новый массив с соответствующими строковыми представлениями каждого числа.
+
+var arra = [1, 2, 3, 4, 5]
+var stringNumbers: [String] = []
+
+for number in arra {
+    stringNumbers.append(String(number))
+}
+
+print(stringNumbers)
+
+
+// Напишите цикл, который превращает массив строк в массив всех строк в верхнем регистре.
+
+let worrds = ["car", "banana", "batman", "iphone"]
+var uppercasedWords: [String] = []
+
+for word in worrds {
+    uppercasedWords.append(word.uppercased())
+}
+
+print(uppercasedWords)
+
+
+// Создайте цикл while, который продолжает генерировать случайные числа до тех пор, пока не будет сгенерировано число, равное 50.
+
+
+//var randomm = Int.random(in: 1...100)
+//while randomm != 50 {
+//    print("Сгенерировано число: \(randomm)")
+//    randomm  = Int.random(in: 1...100)
+//}
+
+//Создайте цикл, который умножает каждое число в массиве на два.
+
+var numbers2 = [1, 2, 3, 4, 5]
+
+for i in 0..<numbers2.count {
+    numbers2[i] *= 2
+}
+
+print(numbers2)
+ 
+
+//Разработайте программу, которая с помощью switch выводит количество дней в каждом месяце.
+
+let month = "Февраль"
+
+switch month {
+case "Январь", "Март", "Май", "Июль", "Август", "Октябрь", "Декабрь":
+    print("\(month) — 31 день")
+case "Апрель", "Июнь", "Сентябрь", "Ноябрь":
+    print("\(month) — 30 дней")
+case "Февраль":
+    print("\(month) — 28 или 29 дней (в зависимости от високосного года)")
+default:
+    print("Неизвестный месяц")
+}
