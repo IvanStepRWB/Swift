@@ -1,0 +1,394 @@
+import UIKit
+
+// Напишите функцию, которая принимает Optional строку и выводит ее на экран, если она не nil.
+
+var optionalString: String? = "Hello, world!"
+func optionalStringPrint(_ optionalString: String?) {
+    if let unwrappedText = optionalString {
+        print(unwrappedText)
+    } else {
+        print(" nil")
+    }
+}
+
+//Напишите функцию, которая принимает Optional число и возвращает его удвоенное значение, если оно не nil.
+
+var optionalInt: Int? = 1
+func optionalIntPrint(_ optionalInt: Int?) -> Int? {
+    if let unwrappedInt = optionalInt {
+        return unwrappedInt * 2
+    }  else {
+        return nil
+    }
+}
+
+// Напишите функцию, которая принимает Optional массив чисел и возвращает его длину, если массив не nil.
+
+var optionalArray: [Int?] = [1, 2, 3]
+func arrayLength(_ optionalArray: [Int]?) -> Int {
+    if let unwrappedArray = optionalArray {
+        return unwrappedArray.count
+    } else {
+        return 0
+    }
+}
+
+// Напишите функцию, которая принимает Optional строку и проверяет, содержит ли она определенное подстроку, возвращая true или false.
+
+func optionalStringUnder(_ optionalString: String?, substring: String) -> Bool {
+    if let unwrappedText = optionalString {
+        return unwrappedText.contains(substring)
+    } else {
+        return false
+    }
+}
+
+// Напишите функцию, которая принимает Optional число и возвращает его в квадрате, если оно не nil.
+
+func optionalIntSquer(_ optionalInt: Int?) -> Int? {
+    if let unwrappedInt = optionalInt {
+        return unwrappedInt * unwrappedInt
+    }  else {
+        return nil
+    }
+}
+
+// Напишите функцию, которая принимает Optional массив строк и выводит каждую строку на новой строке, если массив не nil.
+
+var optionalStringArray: [String?] = ["ball","door","pineapple"]
+
+func printArray(_ optionalStringArray: [String]?) {
+    if let unwrappedArray = optionalStringArray {
+        for word in unwrappedArray {
+            print(word)
+        }
+    } else {
+        print("nil")
+    }
+}
+
+// Напишите функцию, которая принимает Optional строку и возвращает ее длину, если она не nil, и 0 в противном случае.
+
+func optinalStringLeight(_ optionalString: String?) -> Int {
+    if let unwrappedText = optionalString {
+        return unwrappedText.count
+    } else {
+        return 0
+    }
+}
+
+// Напишите функцию, которая принимает Optional число и проверяет, является ли оно четным, возвращая true или false.
+
+func isOptionalIntEven(_ optionalInt: Int?) -> Bool {
+    if let unwrappedInt = optionalInt {
+        return unwrappedInt % 2 == 0
+    } else {
+        return false
+    }
+}
+
+// Напишите функцию, которая принимает Optional массив чисел и возвращает сумму всех элементов массива, если массив не nil.
+
+func arraySum(_ optionalArray: [Int]?) -> Int {
+    if let unwrappedArray = optionalArray {
+        return unwrappedArray.reduce(0, +)
+    } else {
+        return 0
+    }
+}
+
+// Напишите функцию, которая принимает Optional число и возвращает true, если оно положительное, и false, если отрицательное или nil.
+
+func isOptionalIntPositive(_ optionalInt: Int?) -> Bool {
+    if let unwrappedInt = optionalInt {
+        return unwrappedInt >= 0
+    } else {
+        return false
+    }
+}
+
+//Напишите функцию, которая принимает Optional строку и возвращает ее в обратном порядке, если она не nil.
+
+func optionalStringReverse(_ optionalString: String?) -> String? {
+    if let unwrappedText = optionalString {
+        return String(unwrappedText.reversed())
+    } else {
+        return nil
+    }
+}
+
+// Напишите функцию, которая принимает Optional массив строк и возвращает первую строку, если массив не nil и не пустой.
+
+func arrayFirstIndex(_ optionalStringArray: [String]?) -> String? {
+    if let unwrappedArray = optionalStringArray {
+        return unwrappedArray.first
+    } else {
+        return nil
+    }
+}
+
+// Напишите функцию, которая принимает Optional число и возвращает его квадратный корень, если оно не nil и положительное.
+
+func optionalIntRoot(_ optionalInt: Int?) -> Double? {
+    if let unwrappedInt = optionalInt, unwrappedInt >= 0 {
+        return sqrt(Double(unwrappedInt))
+    } else {
+        return nil
+    }
+}
+
+// Напишите функцию, которая принимает Optional массив чисел и возвращает максимальное значение, если массив не nil и не пустой.
+
+func arrayMaxNumber(_ optionalArray: [Int]?) -> Int? {
+    if let unwrappedArray = optionalArray, !unwrappedArray.isEmpty {
+        return unwrappedArray.max()
+    } else {
+        return nil
+    }
+}
+
+// Напишите функцию, которая принимает Optional строку и удаляет из нее все пробелы, если строка не nil.
+
+func optionalStringBackspace(_ optionalString: String?) -> String? {
+    if let unwrappedText = optionalString {
+        return unwrappedText.replacingOccurrences(of: " ", with: "")
+    } else {
+        return nil
+    }
+}
+
+//Напишите функцию, которая принимает Optional число и возвращает true, если оно простое, и false, если не nil и составное.
+
+func isOptionalPrime(_ optionalNumber: Int?) -> Bool {
+    if let number = optionalNumber {
+        if number < 2 {
+            return false
+        }
+        
+        for i in 2..<number {
+            if number % i == 0 {
+                return false
+            }
+        }
+        
+        return true
+    } else {
+        return false
+    }
+}
+
+//Напишите функцию, которая принимает Optional массив строк и возвращает новый массив, содержащий только строки заданной длины, если массив не nil.
+
+func filterStringsByLength(_ stringArray: [String]?, length: Int) -> [String] {
+    if let array = stringArray {
+        return array.filter { $0.count == length }
+    } else {
+        return []
+    }
+}
+
+//Напишите функцию, которая принимает Optional число и возвращает его факториал, если оно не nil и неотрицательное
+
+func optionalFactorial(_ optionalInt: Int?) -> Int? {
+    if let n = optionalInt, n >= 0 {
+        if n == 0 {
+            return 1
+        }
+        
+        var result = 1
+        for i in 1...n {
+            result *= i
+        }
+        return result
+    } else {
+        return nil
+    }
+}
+
+// Напишите функцию, которая принимает Optional массив чисел и возвращает среднее значение, если массив не nil и не пустой.
+
+func arrayAverage(_ optionalArray: [Int]?) -> Double? {
+    if let array = optionalArray, !array.isEmpty {
+        let sum = array.reduce(0, +)
+        return Double(sum) / Double(array.count)
+    } else {
+        return nil
+    }
+}
+
+//Напишите функцию, которая принимает Optional строку и возвращает ее в верхнем регистре, если она не nil.
+
+func optionalStringUpper(_ optionalString: String?) -> String? {
+    if let unwrappedText = optionalString {
+        return unwrappedText.uppercased()
+    } else {
+        return nil
+    }
+}
+
+
+// Напишите функцию, которая выводит приветствие "Привет, мир!" на экран.
+
+func HelloWorld() {
+    print ("Привет, мир!")
+}
+
+// Напишите функцию, которая принимает имя пользователя и выводит приветствие с этим именем.
+var name: String
+
+func helloUser(name: String) {
+    print ("Привет \(name)")
+}
+
+// Напишите функцию, которая принимает два числа и возвращает их сумму.
+
+var a: Int
+var b: Int
+
+func sumOfTwoNumbers(a:Int, b:Int) -> Int {
+    var c = a + b
+    return c
+}
+
+//  Напишите функцию, которая принимает два числа и возвращает их произведение.
+
+func multiplyOfTwoNumbers(a:Int, b:Int) -> Int {
+    var c = a * b
+    return c
+}
+
+// Напишите функцию, которая принимает строку и возвращает ее длину.
+
+func lengthOfString(name: String) -> Int {
+    return name.count
+}
+
+// Напишите функцию, которая принимает массив чисел и возвращает сумму всех элементов массива.
+var numberArray = [2,3,4,5]
+func sumOfArrayElements(numberArray:[Int]) -> Int {
+    return numberArray.reduce(0, +)
+}
+
+// Напишите функцию, которая принимает массив строк и выводит каждую строку на новой строке.
+
+var stringArray = ["Заточка", "Кровосток", "Гудтаймс"]
+
+func printStrings(_ stringArray: [String]) {
+    for str in stringArray {
+        print(str)
+    }
+}
+
+// Напишите функцию, которая принимает число и возвращает true, если оно четное, и false, если нечетное
+func isIntEven(_ a: Int) -> Bool {
+        return a % 2 == 0
+}
+
+//Напишите функцию, которая принимает число и возвращает true, если оно простое, и false, если составное.
+
+func isPrime(_ a: Int) -> Bool {
+    if a < 2 {
+        return false
+    }
+    for i in 2..<a {
+        if a % i == 0 {
+            return false
+        }
+    }
+    return true
+}
+
+// Напишите функцию, которая принимает два числа и возвращает большее из них.
+
+func biggerNumber(a: Int, b: Int) -> Int {
+    if a > b {
+        return a
+    } else {
+        return b
+    }
+}
+
+// Напишите функцию, которая принимает массив чисел и возвращает массив только из четных чисел.
+
+func evenNumbersArray(_ numbersArray: [Int]) -> [Int] {
+    var result: [Int] = []
+    for number in numbersArray {
+        if number % 2 == 0 {
+            result.append(number)
+        }
+    }
+    return result
+}
+
+
+//  Напишите функцию, которая принимает строку и возвращает ее в обратном порядке.
+
+func reverseString(_ name: String) -> String {
+    return String(name.reversed())
+}
+
+// Напишите функцию, которая принимает массив строк и возвращает новый массив, содержащий только строки заданной длины.
+
+func filterStringsByLength(_ stringArray: [String], length: Int) -> [String] {
+    return stringArray.filter { $0.count == length }
+}
+
+
+// Напишите функцию, которая принимает два числа и возвращает массив с числами в этом диапазоне.
+
+func makeNumberArray(a: Int, b: Int) -> [Int] {
+    return Array(a...b)
+}
+
+// Напишите функцию, которая принимает число и возвращает массив всех чисел от 0 до этого числа.
+
+func makeNumberArrayFromZero(a: Int) -> [Int] {
+    return Array(0...a)
+}
+
+// Напишите функцию, которая принимает массив чисел и возвращает среднее значение.
+
+func averageOfArray(_ numbersArray: [Int]) -> Double {
+    if numbersArray.isEmpty {
+        return 0
+    }
+    let sum = numbersArray.reduce(0, +)
+    return Double(sum) / Double(numbersArray.count)
+}
+
+// Напишите функцию, которая принимает массив чисел и возвращает количество положительных чисел.
+
+func countPositiveNumbers(_ numbersArray: [Int]) -> Int {
+    var count = 0
+    for number in numbersArray {
+        if number > 0 {
+            count += 1
+        }
+    }
+    return count
+}
+
+// Напишите функцию, которая принимает массив чисел и возвращает сумму квадратов этих чисел.
+
+func sumOfSquares(_ numbersArray: [Int]) -> Int {
+    var sum = 0
+    for number in numbersArray {
+        sum += number * number
+    }
+    return sum
+}
+
+// Напишите функцию, которая принимает массив строк и возвращает массив строк без повторений.
+
+func uniqueStrings(_ stringArray: [String]) -> [String] {
+    return Array(Set(stringArray))
+}
+
+// Напишите функцию, которая принимает две строки и проверяет, является ли одна строка анаграммой другой.
+
+func areAnagrams(_ str1: String, _ str2: String) -> Bool {
+    let normalized1 = str1.lowercased().filter { $0.isLetter }
+    let normalized2 = str2.lowercased().filter { $0.isLetter }
+    
+    return normalized1.sorted() == normalized2.sorted()
+}
